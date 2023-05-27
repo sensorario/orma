@@ -13,6 +13,8 @@ class OrmaTest extends SQLiteTestCase
 
     private SqlAdapter $sqlAdapter;
 
+    protected PDO $pdo;
+    
     const FILE = __DIR__ . '/../../database.sqlite';
 
     private string $dns = 'sqlite:' . self::FILE;

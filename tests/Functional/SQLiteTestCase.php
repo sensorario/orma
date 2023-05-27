@@ -16,8 +16,6 @@ class SQLiteTestCase extends TestCase
         $stmt->bindParam(':table', $tableName);
         $stmt->execute();
 
-        var_export($stmt->fetchAll());
-        
         $this->assertCount(0, $stmt->fetchAll());
     }
 
