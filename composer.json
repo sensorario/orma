@@ -1,0 +1,25 @@
+{
+    "name": "sensorario/orma",
+    "autoload": {
+        "psr-4": {
+            "Sensorario\\Orma\\": "src/",
+            "Sensorario\\Orma\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "authors": [
+        {
+            "name": "Simone Gentili",
+            "email": "sensorario@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "require": {
+        "consolidation/robo": "^4",
+        "totten/lurkerlite": "^1.3"
+    }
+}

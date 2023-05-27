@@ -1,0 +1,5 @@
+/bin/
+/.phpunit.cache/
+/.phpunit.result.cache
+/vendor/
+/coverage/
