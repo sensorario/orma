@@ -1,6 +1,6 @@
 <?php
 
-namespace Sensorario\Orma\Tests\Functional;
+namespace Sensorario\Orma\Tests\Functional\SQLite;
 
 use PDO;
 use PHPUnit\Framework\TestCase;
