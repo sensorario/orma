@@ -8,7 +8,7 @@ use Sensorario\Orma\Orma;
 use Sensorario\Orma\SqlAdapter;
 use Sensorario\Orma\SQLiteDriver;
 
-class OrmaTest extends SQLiteTestCase
+class SQLiteTest extends SQLiteTestCase
 {
 
     private SqlAdapter $sqlAdapter;

@@ -5,7 +5,7 @@ docker_exec := $(compose) exec
 args = $(filter-out $@,$(MAKECMDGOALS))
 
 test:
-	$(docker_exec) $(php) bash -c "./bin/phpunit --testdox --color"
+	$(docker_exec) $(php) bash -c "./bin/phpunit --testdox --color --stop-on-failure"
 
 up:
 	$(docker) up -d
