@@ -9,6 +9,9 @@
  > composer require sensorario/orma
 
 Puo copiare `vendor/sensorario/orma/public/index.php` nella root del progetto ed eseguire l'esempio.
+SQLite non richiede alcuna installazione. Per quel che riguarda postgresql, si puo trarre ispirazione da `vendor/sensorario/orma/docker-compose.yaml`.
+
+Buon divertimento
 
 ## Utilzzo
 
