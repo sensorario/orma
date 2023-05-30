@@ -1,5 +1,9 @@
 <?php
 
+use Sensorario\Orma\Orma;
+use Sensorario\Orma\SQLiteDriver;
+
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $schema = [
     'tables' => [
@@ -16,7 +20,8 @@ $schema = [
     ]
 ];
 
-$orma = new Orma;
+$pdo = new PDO('sqlite:./erdatabase');
+$orma = new Orma($pdo, new SQLiteDriver($pdo));
 foreach($schema['tables'] as $table => $columns) {
     $orma($table)->createTable();
     foreach($columns as $column) {

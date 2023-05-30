@@ -8,3 +8,9 @@ RUN pecl install xdebug && \
     docker-php-ext-enable xdebug
 RUN apt-get update
 RUN apt-get install -y git zip
+
+# Installa i driver per PostgreSQL
+RUN apt-get update && \
+    apt-get install -y libpq-dev && \
+    docker-php-ext-install pdo pdo_pgsql
+

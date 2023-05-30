@@ -1,4 +1,5 @@
 version: '3.7'
+
 services:
   server:
     build:
@@ -7,3 +8,17 @@ services:
       - ./:/var/www/html
     ports:
       - "9516:80"
+
+  database:
+    ports:
+      - "5432:5432"
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: your_username
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: your_database_name
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+
