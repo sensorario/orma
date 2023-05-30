@@ -4,6 +4,12 @@
  - aggiungere colonne
  - puoi farlo tanto con sqlite quanto con postgresql
 
+## Installazione
+
+ > composer require sensorario/orma
+
+Puo copiare `vendor/sensorario/orma/public/index.php` nella root del progetto ed eseguire l'esempio.
+
 ## Utilzzo
 
 ```php
