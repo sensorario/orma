@@ -6,8 +6,12 @@ use PDO;
 
 class PostgreSQLDriver implements SqlAdapter
 {
-    public function __construct(private PDO $pdo) { }
+    private PDO $pdo;
 
+    public function setPdo(PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
     public function createTable(string $tableName)
     {
         return sprintf('create table if not exists %s (id serial primary key)', $tableName);

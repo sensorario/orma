@@ -11,7 +11,9 @@ class Orma
     public function __construct(
         protected PDO $pdo,
         private SqlAdapter $sqlAdapter,
-    ) { }
+    ) {
+        $sqlAdapter->setPdo($this->pdo);
+    }
 
     public function __invoke(string $tableName)
     {

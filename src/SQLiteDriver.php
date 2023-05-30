@@ -6,7 +6,12 @@ use PDO;
 
 class SQLiteDriver implements SqlAdapter
 {
-    public function __construct(private PDO $pdo) { }
+    private PDO $pdo;
+
+    public function setPdo(PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
     public function createTable(string $tableName)
     {
