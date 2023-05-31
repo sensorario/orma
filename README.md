@@ -13,17 +13,9 @@ SQLite non richiede alcuna installazione. Per quel che riguarda postgresql, si p
 
 Buon divertimento
 
-## Utilzzo
+## Test
 
-```php
-$orma = new Orma($pdo, match($driver) {
-    'sqlite' => new SQLiteDriver,
-    'postgresql' => new PostgreSQLDriver,
-});
-
-$orma($table)->createTable();
-$orma->addColumn($column);
-```
+Dopo aver installato con `composer install`, lanciare il comando `./bin/robo watch:code` che lancera i test ogni volta che un file dentro `src/` o `tests/` verra modificato.
 
 ## PDO
 
@@ -47,4 +39,16 @@ $pdo = new PDO(
     $config[$config['db']]['username'],
     $config[$config['db']]['password'],
 );
+```
+
+## Utilzzo
+
+```php
+$orma = new Orma($pdo, match($driver) {
+    'sqlite' => new SQLiteDriver,
+    'postgresql' => new PostgreSQLDriver,
+});
+
+$orma($table)->createTable();
+$orma->addColumn($column);
 ```
