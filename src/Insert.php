@@ -14,9 +14,20 @@ class Insert
         $sql = 'insert into ' . $this->table . ' ';
         $sql .= '(' . join(', ', array_keys($this->model)) . ')';
         $sql .= ' values ';
-        $sql .= '(' . join(', ', array_values($this->model)) . ')';
+        $sql .= '(' . $this->values() . ')';
         $sql .= ';';
 
         return $sql;
+    }
+
+    public function values($string = '')
+    {
+        foreach (array_values($this->model) as $element) {
+            if (is_string($element)) {
+                $element = '\'' . $element . '\'';
+            }
+            $string .= $element . ', ';
+        }
+        return rtrim($string, ', ');
     }
 }

@@ -52,3 +52,19 @@ $orma = new Orma($pdo, match($driver) {
 $orma($table)->createTable();
 $orma->addColumn($column);
 ```
+## insert
+
+```php
+$tableName = 'table_name';
+
+$orma = new Orma(
+    $this->pdo,
+    $this->sqlAdapter
+);
+
+$orma($tableName)->createTable();
+$this->assertCountItems(0, $tableName);
+$orma($tableName)->insert([
+    'id' => 42,
+]);
+```

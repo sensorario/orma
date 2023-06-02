@@ -62,7 +62,6 @@ class PostgreSQLTest extends PostgreSQLTestCase
     public function shouldInsertNewRecordsInATable()
     {
         $tableName = 'table_name';
-        $columnName = 'foo';
         
         $orma = new Orma(
             $this->pdo,
