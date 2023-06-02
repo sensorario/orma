@@ -41,30 +41,30 @@ $pdo = new PDO(
 );
 ```
 
-## Utilzzo
+## init
 
 ```php
 $orma = new Orma($pdo, match($driver) {
     'sqlite' => new SQLiteDriver,
     'postgresql' => new PostgreSQLDriver,
 });
+```
 
+## create a table
+
+```php
 $orma($table)->createTable();
+```
+
+## add a column
+
+```php
 $orma->addColumn($column);
 ```
 ## insert
 
 ```php
-$tableName = 'table_name';
-
-$orma = new Orma(
-    $this->pdo,
-    $this->sqlAdapter
-);
-
-$orma($tableName)->createTable();
-$this->assertCountItems(0, $tableName);
-$orma($tableName)->insert([
+$orma('table_name')->insert([
     'id' => 42,
 ]);
 ```
