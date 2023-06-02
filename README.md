@@ -14,13 +14,9 @@ SQLite does not require any installation. Postgres can be used with docker: `ven
 
 Happy coding
 
-## Test
+## pdo
 
-Dopo aver installato con `composer install`, lanciare il comando `./bin/robo watch:code` che lancera i test ogni volta che un file dentro `src/` o `tests/` verra modificato.
-
-## PDO
-
-I dati PostgreSQL fanno riferimento alla docker presente nel progetto.
+Postgres data refers to docker machine inside the project.
 
 ```php
 $config = [
@@ -33,6 +29,7 @@ $config = [
         'dns' => 'sqlite:./erdatabase',
     ],
     'db' => 'postgresql',
+    'db' => 'sqlite',
 ];
 
 $pdo = new PDO(
