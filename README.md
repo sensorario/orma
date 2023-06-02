@@ -5,14 +5,14 @@
  - insert data
  - with sqlite or postgresql
 
-## Installazione
+## installazione
 
  > composer require sensorario/orma
 
-Puo copiare `vendor/sensorario/orma/public/index.php` nella root del progetto ed eseguire l'esempio.
-SQLite non richiede alcuna installazione. Per quel che riguarda postgresql, si puo trarre ispirazione da `vendor/sensorario/orma/docker-compose.yaml`.
+Copy `vendor/sensorario/orma/public/index.php` on your project root.
+SQLite does not require any installation. Postgres can be used with docker: `vendor/sensorario/orma/docker-compose.yaml`.
 
-Buon divertimento
+Happy coding
 
 ## Test
 
@@ -69,3 +69,5 @@ $orma('table_name')->insert([
     'id' => 42,
 ]);
 ```
+
+PS. This repo is made just to play.
