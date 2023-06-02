@@ -36,4 +36,9 @@ class Orma
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
     }
+
+    public function insert(array $model = [])
+    {
+        $this->sqlAdapter->insert($this->tableName, $model);
+    }
 }

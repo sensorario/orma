@@ -37,4 +37,11 @@ class SQLiteDriver implements SqlAdapter
     {
         return sprintf('alter table %s add %s', $tableName, $column);
     }
+    
+    public function insert(string $tableName, array $model)
+    {
+        $insert = new Insert($tableName, $model);
+        $stmt = $this->pdo->prepare($insert->sqlStatement());
+        $stmt->execute();
+    }
 }

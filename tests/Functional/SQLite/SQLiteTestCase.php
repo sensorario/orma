@@ -30,6 +30,16 @@ class SQLiteTestCase extends TestCase
         $this->assertCount(1, $stmt->fetchAll());
     }
 
+    public function assertCountItems($expected, string $tableName)
+    {
+        $stmt = $this->pdo->prepare(
+            "SELECT count(*) FROM " . $tableName
+        );
+        $stmt->execute();
+
+        $this->assertSame($expected, $stmt->fetch()['count(*)']);
+    }
+
     public function assertColumnExists(string $tableName, string $columnName): bool
     {
         $stmt = $this->pdo->prepare("PRAGMA table_info($tableName)");

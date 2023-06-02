@@ -58,6 +58,25 @@ class PostgreSQLTest extends PostgreSQLTestCase
         $this->assertTrue($this->sqlAdapter->checkIfColumnExists($tableName, $columnName));
     }
     
+    /** @test */
+    public function shouldInsertNewRecordsInATable()
+    {
+        $tableName = 'table_name';
+        $columnName = 'foo';
+        
+        $orma = new Orma(
+            $this->pdo,
+            $this->sqlAdapter
+        );
+        
+        $orma($tableName)->createTable();
+        $this->assertCountItems(0, $tableName);
+        $orma($tableName)->insert([
+            'id' => 42,
+        ]);
+        $this->assertCountItems(1, $tableName);
+    }
+    
     public function tearDown(): void
     {
         $stmt = $this->pdo->prepare('drop table table_name');

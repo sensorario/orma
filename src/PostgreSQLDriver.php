@@ -33,5 +33,12 @@ class PostgreSQLDriver implements SqlAdapter
     {
         return sprintf('ALTER TABLE %s ADD COLUMN %s VARCHAR(55);', $tableName, $column);
     }
+
     
+    public function insert(string $tableName, array $model)
+    {
+        $insert = new Insert($tableName, $model);
+        $stmt = $this->pdo->prepare($insert->sqlStatement());
+        $stmt->execute();
+    }
 }
