@@ -1,8 +1,9 @@
 # ORMA
 
- - puoi creare tabelle
- - aggiungere colonne
- - puoi farlo tanto con sqlite quanto con postgresql
+ - you can create tables
+ - add columns
+ - insert data
+ - with sqlite or postgresql
 
 ## Installazione
 
