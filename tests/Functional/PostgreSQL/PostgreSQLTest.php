@@ -71,11 +71,15 @@ class PostgreSQLTest extends PostgreSQLTestCase
         $orma($tableName)->createTable();
         $this->assertCountItems(0, $tableName);
 
-        $orma($tableName)->insert([ 'id' => 42, ]);
+        $orma->insert([ 'id' => 42, ]);
         $this->assertCountItems(1, $tableName);
 
-        $outcome = $orma($tableName)->read([ 'id' => 42, ]);
+        $outcome = $orma->read([ 'id' => 42, ]);
         $this->assertEquals(1, $outcome->founded);
+
+        $orma->delete([ 'id' => 42, ]);
+        $outcome = $orma->read([ 'id' => 42, ]);
+        $this->assertEquals(0, $outcome->founded);
     }
     
     /** @test */

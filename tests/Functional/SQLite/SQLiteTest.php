@@ -61,7 +61,6 @@ class SQLiteTest extends SQLiteTestCase
     public function shouldInsertNewRecordsInATable()
     {
         $tableName = 'table_name';
-        $columnName = 'foo';
         
         $orma = new Orma(
             $this->pdo,
@@ -71,11 +70,15 @@ class SQLiteTest extends SQLiteTestCase
         $orma($tableName)->createTable();
         $this->assertCountItems(0, $tableName);
 
-        $orma($tableName)->insert([ 'id' => 42, ]);
+        $orma->insert([ 'id' => 42, ]);
         $this->assertCountItems(1, $tableName);
 
-        $outcome = $orma($tableName)->read([ 'id' => 42, ]);
+        $outcome = $orma->read([ 'id' => 42, ]);
         $this->assertEquals(1, $outcome->founded);
+
+        $orma->delete([ 'id' => 42, ]);
+        $outcome = $orma->read([ 'id' => 42, ]);
+        $this->assertEquals(0, $outcome->founded);
     }
     
     /** @test */

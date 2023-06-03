@@ -51,4 +51,9 @@ class Orma
     {
         $this->sqlAdapter->update($this->tableName, $model, $where);
     }
+
+    public function delete(array $where = [])
+    {
+        $this->sqlAdapter->delete($this->tableName, $where);
+    }
 }

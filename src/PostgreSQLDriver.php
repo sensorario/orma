@@ -62,4 +62,11 @@ class PostgreSQLDriver implements SqlAdapter
         $stmt = $this->pdo->prepare($update->sqlStatement());
         $stmt->execute();
     }
+
+    public function delete(string $tableName, array $where)
+    {
+        $delete = new Delete($tableName, $where);
+        $stmt = $this->pdo->prepare($delete->sqlStatement());
+        $stmt->execute();
+    }
 }
