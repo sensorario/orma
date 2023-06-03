@@ -3,7 +3,7 @@
  - you can create tables
  - add columns
  - insert data
- - CR of CRUD operations
+ - CRU of CRUD operations
  - designed for sqlite or postgresql
 
 ## install
@@ -65,9 +65,19 @@ $orma->addColumn($column);
 ## insert
 
 ```php
-$orma('table_name')->insert([
+$orma->insert([
     'id' => 42,
 ]);
 ```
 
-PS. This repo is made just to play.
+## update
+
+```php
+$orma->update([
+    'foo' => 'bar',
+], [
+    'id' => 42,
+]);
+```
+
+PS. This repo is made just for fun. 

@@ -7,6 +7,9 @@ args = $(filter-out $@,$(MAKECMDGOALS))
 test:
 	$(docker_exec) $(php) bash -c "./bin/phpunit --testdox --color --stop-on-failure"
 
+testdots:
+	$(docker_exec) $(php) bash -c "./bin/phpunit --color --stop-on-failure"
+
 up:
 	$(docker) up -d
 	make install

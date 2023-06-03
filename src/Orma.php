@@ -46,4 +46,9 @@ class Orma
     {
         return $this->sqlAdapter->read($this->tableName, $where);
     }
+
+    public function update(array $model = [], array $where = [])
+    {
+        $this->sqlAdapter->update($this->tableName, $model, $where);
+    }
 }

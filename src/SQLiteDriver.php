@@ -51,8 +51,18 @@ class SQLiteDriver implements SqlAdapter
         $stmt = $this->pdo->prepare($read->sqlStatement());
         $stmt->execute();
 
+        $results = $stmt->fetchAll();
+
         return new Outcome(
-            founded: count($stmt->fetchAll())
+            founded: count($results),
+            results: $results,
         );
+    }
+
+    public function update(string $tableName, array $model, array $where)
+    {
+        $update = new Update($tableName, $model, $where);
+        $stmt = $this->pdo->prepare($update->sqlStatement());
+        $stmt->execute();
     }
 }

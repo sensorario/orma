@@ -6,7 +6,7 @@ class Read
 {
     public function __construct(
         private string $table,
-        private array $model,
+        private array $where,
     ) { }
 
     public function sqlStatement()
@@ -17,9 +17,10 @@ class Read
         return $sql;
     }
 
+    // @todo remove this duplication
     public function values($string = '')
     {
-        foreach ($this->model as $key => $element) {
+        foreach ($this->where as $key => $element) {
             if (is_string($element)) {
                 $element = '\'' . $element . '\'';
             }

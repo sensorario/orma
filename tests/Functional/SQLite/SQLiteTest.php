@@ -78,6 +78,29 @@ class SQLiteTest extends SQLiteTestCase
         $this->assertEquals(1, $outcome->founded);
     }
     
+    /** @test */
+    public function shouldAddColumnAndUpdateJustOneOfTheme()
+    {
+        $tableName = 'table_name';
+        
+        $orma = new Orma(
+            $this->pdo,
+            $this->sqlAdapter
+        );
+        
+        $orma($tableName)->createTable();
+        $orma->addColumn('username');
+        $orma->addColumn('password');
+        $orma->insert([
+            'id' => 44,
+            'username' => 'simone',
+            'password' => 'simone',
+        ]);
+        $orma->update([ 'password' => 'password' ], [ 'id' => 44 ]);
+        $after = $orma->read([ 'id' => 44, ]);
+        $this->assertEquals('password', $after->results[0]['password']);
+    }
+    
     public function tearDown(): void
     {
         unlink(self::FILE);
