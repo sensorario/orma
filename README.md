@@ -3,9 +3,10 @@
  - you can create tables
  - add columns
  - insert data
- - with sqlite or postgresql
+ - CR of CRUD operations
+ - designed for sqlite or postgresql
 
-## installazione
+## install
 
 ```
 composer require sensorario/orma
