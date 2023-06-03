@@ -9,6 +9,6 @@ interface SqlAdapter
     public function checkIfColumnExists(string $tableName, string $column);
     public function addColumn(string $tableName, string $column);
     public function insert(string $tableName, array $model);
-    public function read(string $tableName, array $model): Outcome;
+    public function read(string $tableName, array $where): Outcome;
     public function update(string $tableName, array $model, array $where);
 }
