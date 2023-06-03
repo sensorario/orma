@@ -9,6 +9,7 @@
     "config": {
         "bin-dir": "bin"
     },
+    "license": "MIT",
     "authors": [
         {
             "name": "Simone Gentili",

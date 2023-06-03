@@ -1,6 +1,6 @@
 # Orma
 
-## v1.0 - (??/??/????)
+## v0.0 - (03/06/2023)
 
  - sqlite support
  - postgresql support
