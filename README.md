@@ -21,7 +21,7 @@ Happy coding
 
 Postgres data refers to docker machine inside the project.
 
-```
+```php
 $config = [
     'postgresql' => [
         'dns' => 'pgsql:host=database;dbname=your_database_name',
@@ -44,7 +44,7 @@ $pdo = new PDO(
 
 ## init
 
-```
+```php
 $orma = new Orma($pdo, match($driver) {
     'sqlite' => new SQLiteDriver,
     'postgresql' => new PostgreSQLDriver,
@@ -53,18 +53,18 @@ $orma = new Orma($pdo, match($driver) {
 
 ## create a table
 
-```
+```php
 $orma($table)->createTable();
 ```
 
 ## add a column
 
-```
+```php
 $orma->addColumn($column);
 ```
 ## insert
 
-```
+```php
 $orma('table_name')->insert([
     'id' => 42,
 ]);
