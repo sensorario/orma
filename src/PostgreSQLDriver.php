@@ -42,7 +42,7 @@ class PostgreSQLDriver implements SqlAdapter
         $stmt->execute();
     }
 
-    public function read(string $tableName, array $where)
+    public function read(string $tableName, array $where): Outcome
     {
         $read = new Read($tableName, $where);
         $stmt = $this->pdo->prepare($read->sqlStatement());
