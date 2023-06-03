@@ -41,4 +41,9 @@ class Orma
     {
         $this->sqlAdapter->insert($this->tableName, $model);
     }
+
+    public function read(array $where)
+    {
+        return $this->sqlAdapter->read($this->tableName, $where);
+    }
 }
